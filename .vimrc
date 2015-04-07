@@ -121,4 +121,7 @@ nnoremap <silent> <Leader>b :TagbarToggle<CR>
 let g:airline#extensions#tabline#enabled = 1
 let g:airline_theme='ubaryd'
 let g:airline_powerline_fonts=0
-
+" -------------------------------------------------------------------
+" Syntastic settings
+" -------------------------------------------------------------------
+let g:syntastic_disabled_filetypes=['java']
