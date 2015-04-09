@@ -74,6 +74,7 @@ let vimclojure#ParenRainbow=1
 " -------------------------------------------------------------------
 " Vanilla Vim Settings
 " -------------------------------------------------------------------
+"  <leader> = '\'
 set backupdir=$HOME/.vim/backups
 " set directory=$HOME/.vim/swaps
 set undofile                " Save undo's after file closes
@@ -93,6 +94,8 @@ set pastetoggle=<F2>
 set showmode
 set mouse=a
 set nowrap
+set cc=120
+autocmd BufNewFile,BufRead *.java set cc=160
 
 " -------------------------------------------------------------------
 " ctrlp settings
@@ -124,4 +127,16 @@ let g:airline_powerline_fonts=0
 " -------------------------------------------------------------------
 " Syntastic settings
 " -------------------------------------------------------------------
-let g:syntastic_disabled_filetypes=['java']
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 0
+"let g:syntastic_check_on_wq = 0
+
+let g:syntastic_mode_map = {
+    \ "mode": "active",
+    \ "active_filetypes": ["ruby", "python", "php", "perl"],
+    \ "passive_filetypes": ["java"] }
