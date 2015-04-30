@@ -92,7 +92,7 @@ export NODE_PATH="/usr/local/lib/node"
 export WORKON_HOME=$HOME/.virtualenvs
 export PIP_DOWNLOAD_CACHE=$HOME/.pip_packages
 #export PROJECT_HOME=$HOME/
-source "/usr/local/share/python/virtualenvwrapper.sh"
+#source "/usr/local/share/python/virtualenvwrapper.sh"
 
 
 #########################
