@@ -17,6 +17,7 @@ Plugin 'scrooloose/syntastic'
 Plugin 'scrooloose/nerdtree'
 Plugin 'tpope/vim-sensible'
 Plugin 'majutsushi/tagbar'
+Plugin 'fatih/vim-go'
 
 "
 " Brief help
@@ -97,6 +98,12 @@ set nowrap
 set cc=120
 autocmd BufNewFile,BufRead *.java set cc=160
 
+" buffer switch
+set switchbuf=usetab
+nnoremap <F8> :sbnext<CR>
+nnoremap <S-F8> :sbprevious<CR>
+nnoremap <Space> za
+
 " -------------------------------------------------------------------
 " ctrlp settings
 " -------------------------------------------------------------------
@@ -139,4 +146,4 @@ let g:syntastic_check_on_open = 0
 let g:syntastic_mode_map = {
     \ "mode": "active",
     \ "active_filetypes": ["ruby", "python", "php", "perl"],
-    \ "passive_filetypes": ["java"] }
+    \ "passive_filetypes": ["java", "go"] }

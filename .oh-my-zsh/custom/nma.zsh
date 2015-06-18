@@ -106,6 +106,13 @@ PATH="/Users/nickma/Documents/android-sdk-macosx/tools:$PATH"
 ##      FUNCs          ##
 #########################
 
+function git_push_new {
+    git push -u origin $1
+}
+
+function git_new_br {
+    git co -b $1 && git_push_new $1
+}
 
 # added by Anaconda3 2.2.0 installer
 export PATH="/Users/nickma/anaconda/bin:$PATH"
