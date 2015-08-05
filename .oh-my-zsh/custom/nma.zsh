@@ -76,6 +76,7 @@ alias sshaws='ssh -o "UserKnownHostsFile /dev/null"'
 alias sha256='shasum -a 256'
 alias sha1='shasum -a 1'
 alias tmux='tmux -2'
+alias please='ssh !!'
 
 #eval "$(rbenv init -)"
 #alias b=‘bundle exec’
