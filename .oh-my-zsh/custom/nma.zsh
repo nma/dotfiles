@@ -116,4 +116,4 @@ function git_new_br {
 }
 
 # added by Anaconda3 2.2.0 installer
-export PATH="/Users/nickma/anaconda/bin:$PATH"
+export PATH="$HOME/anaconda/bin:$PATH"
