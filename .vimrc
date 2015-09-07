@@ -1,37 +1,37 @@
-set textwidth=125
 set nocompatible
-set backspace=2
-set smartindent
 filetype on
 filetype off
 
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
 
-Plugin 'gmarik/vundle'
-Plugin 'kien/ctrlp.vim'
-Plugin 'Lokaltog/vim-easymotion'
-Plugin 'bling/vim-airline'
-Plugin 'airblade/vim-gitgutter'
-Plugin 'scrooloose/syntastic'
-Plugin 'scrooloose/nerdtree'
-Plugin 'tpope/vim-sensible'
-Plugin 'majutsushi/tagbar'
-Plugin 'fatih/vim-go'
+Bundle 'gmarik/vundle'
+Bundle 'kien/ctrlp.vim'
+Bundle 'Lokaltog/vim-easymotion'
+Bundle 'airblade/vim-gitgutter'
+Bundle 'scrooloose/syntastic'
+Bundle 'scrooloose/nerdtree'
+Bundle 'tpope/vim-sensible'
+Bundle 'kchmck/vim-coffee-script'
+Bundle 'pangloss/vim-javascript'
+Bundle 'majutsushi/tagbar'
+Bundle 'vim-scripts/VimClojure'
+Bundle 'altercation/vim-colors-solarized'
+Bundle 'groenewege/vim-less'
+Bundle 'farseer90718/vim-taskwarrior'
 
 "
 " Brief help
-" :PluginList          - list configured Plugins
-" :PluginInstall(!)    - install(update) Plugins
-" :PluginSearch(!) foo - search(or refresh cache first) for foo
-" :PluginClean(!)      - confirm(or auto-approve) removal of unused Plugins
+" :BundleList          - list configured bundles
+" :BundleInstall(!)    - install(update) bundles
+" :BundleSearch(!) foo - search(or refresh cache first) for foo
+" :BundleClean(!)      - confirm(or auto-approve) removal of unused bundles
 "
 " see :h vundle for more details or wiki for FAQ
-" NOTE: comments after Plugin command are not allowed..
+" NOTE: comments after Bundle command are not allowed..
 
-" All of your Plugins must be added before the following line
-call vundle#end()            " required
-filetype plugin indent on    " required
+
+"execute pathogen#infect()
 
 "
 " Manual Vim Settings
@@ -39,14 +39,12 @@ filetype plugin indent on    " required
 syntax on
 filetype plugin indent on
 
-set t_Co=256
-set encoding=utf-8
-set termencoding=utf-8
-colorscheme desert
+"colorscheme desert
 "colorscheme mayansmoke
 "colorscheme pyte
 "colorscheme default
 "set background=dark
+colorscheme delek
 
 set tabstop=4
 set shiftwidth=4
@@ -75,13 +73,9 @@ let vimclojure#ParenRainbow=1
 " -------------------------------------------------------------------
 " Vanilla Vim Settings
 " -------------------------------------------------------------------
-"  <leader> = '\'
+set undodir=$HOME/.vim/undos
 set backupdir=$HOME/.vim/backups
 " set directory=$HOME/.vim/swaps
-set undofile                " Save undo's after file closes
-set undodir=$HOME/.vim/undos
-set undolevels=1000         " How many undos
-set undoreload=10000        " number of lines to save for undo
 
 " Use the same symbols as TextMate for tabstops and EOLs
 set listchars=tab:▸\ ,eol:¬,trail:·,precedes:·,extends:>
@@ -95,14 +89,11 @@ set pastetoggle=<F2>
 set showmode
 set mouse=a
 set nowrap
+" sets colorcolumn when lines go over 120 chars
 set cc=120
-autocmd BufNewFile,BufRead *.java set cc=160
-
-" buffer switch
-set switchbuf=usetab
-nnoremap <F8> :sbnext<CR>
-nnoremap <S-F8> :sbprevious<CR>
-nnoremap <Space> za
+set wildmode=longest,list,full
+set wildmenu
+"set foldmethod=syntax
 
 " -------------------------------------------------------------------
 " ctrlp settings
@@ -120,30 +111,20 @@ map <Tab> <c-p>
 " NerdTreeSettings
 " -------------------------------------------------------------------
 nmap <silent> <C-t> :NERDTreeToggle <CR>
-let g:NERDTreeDirArrows=0
-" -------------------------------------------------------------------
-" TagBarSettings 
-" -------------------------------------------------------------------
-nnoremap <silent> <Leader>b :TagbarToggle<CR>
 " -------------------------------------------------------------------
 " vim-airline 
 " -------------------------------------------------------------------
-let g:airline#extensions#tabline#enabled = 1
-let g:airline_theme='ubaryd'
-let g:airline_powerline_fonts=1
+"let g:airline#extensions#tabline#enabled = 1
+"let g:airline_theme='ubaryd'
+"let g:airline_powerline_fonts=1
 " -------------------------------------------------------------------
-" Syntastic settings
+" powerline 
 " -------------------------------------------------------------------
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
+python from powerline.vim import setup as powerline_setup
+python powerline_setup()
+python del powerline_setup
+" -------------------------------------------------------------------
+" TagBarSettings 
+" -------------------------------------------------------------------
+set tags=~/mytags
 
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 0
-"let g:syntastic_check_on_wq = 0
-
-let g:syntastic_mode_map = {
-    \ "mode": "active",
-    \ "active_filetypes": ["ruby", "python", "php", "perl"],
-    \ "passive_filetypes": ["java", "go"] }

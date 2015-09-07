@@ -67,25 +67,23 @@ _dir_chomp () {
 alias loc='cd /usr/local/workspace'
 alias pipfiles='cd /usr/local/lib/python2.7/site-packages'
 alias subl='/Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl'
-alias gs='git status'
-alias gpo='git pull origin'
+alias g='git'
 alias apachestart='sudo apachectl -k start'
 alias apachestop='sudo apachectl -k stop'
-alias store='cd /usr/local/workspace/alicetwelve/web2py/applications/store'
 alias sshaws='ssh -o "UserKnownHostsFile /dev/null"'
 alias sha256='shasum -a 256'
 alias sha1='shasum -a 1'
 alias tmux='tmux -2'
 alias please='ssh !!'
+alias WS='/usr/local/workspace'
 
-#eval "$(rbenv init -)"
-#alias b=‘bundle exec’
-WS='/usr/local/workspace'
-
-### Added by the Heroku Toolbelt
-export PATH="/usr/local/heroku/bin:$PATH"
-export NODE_PATH="/usr/local/lib/node"
-
+#########################
+##      PowerLine      ##
+#########################
+export WORKON_HOME=$HOME/.virtualenvs
+if [ -d "$HOME/.local/bin" ]; then
+    PATH="$HOME/.local/bin:$PATH"
+fi
 
 #########################
 ##      virtualenv     ##
@@ -93,14 +91,16 @@ export NODE_PATH="/usr/local/lib/node"
 export WORKON_HOME=$HOME/.virtualenvs
 export PIP_DOWNLOAD_CACHE=$HOME/.pip_packages
 #export PROJECT_HOME=$HOME/
-#source "/usr/local/share/python/virtualenvwrapper.sh"
 
 
 #########################
-##      ENVs           ##
+##      Path ENVs      ##
 #########################
 export ANDROID_HOME=/Users/nickma/Documents/android-sdk-macosx
 PATH="/Users/nickma/Documents/android-sdk-macosx/tools:$PATH"
+### Added by the Heroku Toolbelt
+export PATH="/usr/local/heroku/bin:$PATH"
+export NODE_PATH="/usr/local/lib/node"
 
 
 #########################
