@@ -22,43 +22,9 @@ if [ -f /usr/local/git/contrib/completion/git-prompt.sh ]; then
     . /usr/local/git/contrib/completion/git-prompt.sh
 fi
 
-if [ -f /etc/bash_completion ]; then
-    . /etc/bash_completion
-fi
-
 function _update_ps1() {
     export PS1="$(~/powerline-shell.py $? 2> /dev/null)"
 }
-
-_dir_chomp () {
-    local IFS=/ c=1 n d
-    local p=(${1/#$HOME/\~}) r=${p[*]}
-    local s=${#r}
-    while ((s>$2&&c<${#p[*]}-1))
-    do
-        d=${p[c]}
-        n=1;[[ $d = .* ]]&&n=2
-        ((s-=${#d}-n))
-        p[c++]=${d:0:n}
-    done
-    echo "${p[*]}"
-}
-
-#$(date +%H:%M) 
-## COLOURS ##
-#GREY=\[\e[1;30m\]
-
-# change terminal style
-#PS1='\e[0;33m\w\n\e[0m'
-#PS1=$PS1'\e[0;33m[ \W$(__git_ps1 " (%s)") ]\e[0m\$ '
-# dark colors background terminal
-#PS1='\[\e[0;32m\]\w\[\e[0m\]\n\e[0;36m\][ \W$(__git_ps1 " (%s)") ]\[\e[0m\]\$ '
-#PS1='\[\e[0;32m\] $(_dir_chomp \w 20) \[\e[0m\]\e[0;36m\][ \W$(__git_ps1 " (%s)") ]\[\e[0m\]\$ '
-# bright colors background terminal
-#PS1='\[\e[1;32m\] $(_dir_chomp \w 20) \[\e[0m\]\e[0;31m\][ \W$(__git_ps1 " (%s)") ]\[\e[0m\]\$ '
-#30m and 36m is good
-
-#export PROMPT_COMMAND="_update_ps1; $PROMPT_COMMAND"
 
 #########################
 ##      ALIASES        ##
@@ -114,6 +80,3 @@ function git_push_new {
 function git_new_br {
     git co -b $1 && git_push_new $1
 }
-
-# added by Anaconda3 2.2.0 installer
-export PATH="$HOME/anaconda/bin:$PATH"

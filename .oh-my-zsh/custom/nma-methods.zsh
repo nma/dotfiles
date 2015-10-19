@@ -1,17 +1,3 @@
-function _dir_chomp () {
-    local IFS=/ c=1 n d
-    local p=(${1/#$HOME/\~}) r=${p[*]}
-    local s=${#r}
-    while ((s>$2&&c<${#p[*]}-1))
-    do
-        d=${p[c]}
-        n=1;[[ $d = .* ]]&&n=2
-        ((s-=${#d}-n))
-        p[c++]=${d:0:n}
-    done
-    echo "${p[*]}"
-}
-
 # continuously runs a given command maintaining colorization and formatting in output
 # input: sleep time between executions, command to run
 function watcher()
