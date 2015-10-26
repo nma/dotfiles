@@ -23,3 +23,15 @@ function watcher()
 alias tmux='TERM=xterm tmux'
 alias pyjson='python -mjson.tool'
 alias serve_it='python -m SimpleHTTPServer'
+alias pstart='~/pomodoro-counter.py'
+
+function dockerclean()
+{
+    if [[ "$1" == "c" ]]; then
+        STATUS='created'
+    else
+        STATUS='exited'
+    fi
+    echo "cleaning $STATUS..."
+    docker rm $(docker ps -q -f status=$STATUS)
+}
