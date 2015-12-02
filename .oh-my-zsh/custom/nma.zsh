@@ -22,42 +22,22 @@ if [ -f /usr/local/git/contrib/completion/git-prompt.sh ]; then
     . /usr/local/git/contrib/completion/git-prompt.sh
 fi
 
-function _update_ps1() {
-    export PS1="$(~/powerline-shell.py $? 2> /dev/null)"
-}
-
-#########################
-##      ALIASES        ##
-#########################
-
-alias loc='cd /usr/local/workspace'
-alias pipfiles='cd /usr/local/lib/python2.7/site-packages'
-alias subl='/Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl'
-alias g='git'
-alias apachestart='sudo apachectl -k start'
-alias apachestop='sudo apachectl -k stop'
-alias sshaws='ssh -o "UserKnownHostsFile /dev/null"'
-alias sha256='shasum -a 256'
-alias sha1='shasum -a 1'
-alias tmux='tmux -2'
-alias please='ssh !!'
-alias WS='/usr/local/workspace'
-
 #########################
 ##      PowerLine      ##
 #########################
-export WORKON_HOME=$HOME/.virtualenvs
-if [ -d "$HOME/.local/bin" ]; then
-    PATH="$HOME/.local/bin:$PATH"
-fi
+function _update_ps1() {
+    export PS1="$(~/powerline-shell.py $? 2> /dev/null)"
+}
 
 #########################
 ##      virtualenv     ##
 #########################
 export WORKON_HOME=$HOME/.virtualenvs
 export PIP_DOWNLOAD_CACHE=$HOME/.pip_packages
+if [ -d "$HOME/.local/bin" ]; then
+    PATH="$HOME/.local/bin:$PATH"
+fi
 #export PROJECT_HOME=$HOME/
-
 
 #########################
 ##      Path ENVs      ##
@@ -67,8 +47,27 @@ PATH="/Users/nickma/Documents/android-sdk-macosx/tools:$PATH"
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
 export NODE_PATH="/usr/local/lib/node"
+export WS='~/workspace'
 
+#########################
+##      ALIASES        ##
+#########################
 
+alias loc='cd $WS'
+alias pipfiles='cd /usr/local/lib/python2.7/site-packages'
+alias subl='/Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl'
+alias g='git'
+alias apstart='sudo apachectl -k start'
+alias apstop='sudo apachectl -k stop'
+alias sshaws='ssh -o "UserKnownHostsFile /dev/null"'
+alias sha256='shasum -a 256'
+alias sha1='shasum -a 1'
+alias tmux='tmux -2'
+alias please='ssh !!'
+alias tl='task list'
+alias tc='task end.after:today-1wk completed'
+alias ts='task sync'
+ 
 #########################
 ##      FUNCs          ##
 #########################

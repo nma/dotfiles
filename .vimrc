@@ -19,6 +19,7 @@ Plugin 'vim-scripts/VimClojure'
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'groenewege/vim-less'
 Plugin 'farseer90718/vim-taskwarrior'
+Plugin 'fatih/vim-go'
 
 "
 " Brief help
@@ -37,12 +38,12 @@ Plugin 'farseer90718/vim-taskwarrior'
 syntax on
 filetype plugin indent on
 
-"colorscheme desert
+colorscheme desert
 "colorscheme mayansmoke
 "colorscheme pyte
 "colorscheme default
 "set background=dark
-colorscheme delek
+"colorscheme delek
 
 set tabstop=4
 set shiftwidth=4
@@ -125,4 +126,9 @@ python del powerline_setup
 " TagBarSettings 
 " -------------------------------------------------------------------
 set tags=~/mytags
+" -------------------------------------------------------------------
+" SyntasticSettings 
+" -------------------------------------------------------------------
+let g:syntastic_go_checkers = ['golint', 'govet', 'errcheck']
+let g:syntastic_mode_map = { 'mode': 'active', 'passive_filetypes': ['go'] }
 

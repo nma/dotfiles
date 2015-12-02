@@ -33,5 +33,5 @@ function dockerclean()
         STATUS='exited'
     fi
     echo "cleaning $STATUS..."
-    docker rm $(docker ps -q -f status=$STATUS)
+    docker rm -v $(docker ps -q -f status=$STATUS)
 }
