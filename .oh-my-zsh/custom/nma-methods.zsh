@@ -24,6 +24,10 @@ alias tmux='TERM=xterm tmux'
 alias pyjson='python -mjson.tool'
 alias serve_it='python -m SimpleHTTPServer'
 alias pstart='~/pomodoro-counter.py'
+alias urldecode='python -c "import sys, urllib as ul; \
+    print ul.unquote_plus(sys.argv[1])"'
+alias urlencode='python -c "import sys, urllib as ul; \
+    print ul.quote_plus(sys.argv[1])"'
 
 function dockerclean()
 {
@@ -35,3 +39,5 @@ function dockerclean()
     echo "cleaning $STATUS..."
     docker rm -v $(docker ps -q -f status=$STATUS)
 }
+
+

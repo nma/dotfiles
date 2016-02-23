@@ -79,3 +79,11 @@ function git_push_new {
 function git_new_br {
     git co -b $1 && git_push_new $1
 }
+
+function tcp_keepalive {
+    sudo /sbin/sysctl -w net.ipv4.tcp_keepalive_time=200 net.ipv4.tcp_keepalive_intvl=200 net.ipv4.tcp_keepalive_probes=5
+}
+
+function conda_up {
+    export PATH=~/anaconda3/bin:$PATH
+}
