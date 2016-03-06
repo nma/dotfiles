@@ -1,9 +1,8 @@
 set nocompatible
-filetype on
 filetype off
 
-set rtp+=~/.vim/bundle/Vundle.vim/
-call vundle#rc()
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
 
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'kien/ctrlp.vim'
@@ -131,4 +130,8 @@ set tags=~/mytags
 " -------------------------------------------------------------------
 let g:syntastic_go_checkers = ['golint', 'govet', 'errcheck']
 let g:syntastic_mode_map = { 'mode': 'active', 'passive_filetypes': ['go'] }
+" -------------------------------------------------------------------
+" Syntax coloring settings 
+" -------------------------------------------------------------------
+au BufRead,BufNewFile Vagrantfile set filetype=ruby
 

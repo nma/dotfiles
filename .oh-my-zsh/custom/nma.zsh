@@ -2,14 +2,34 @@
 ##       BASICS        ##
 #########################
 
+## Emacs mode
+bindkey -e
+
+## Vi mode
+#bindkey -v
+# Use vim cli mode
+#bindkey '^P' up-history
+#bindkey '^N' down-history
+
+# backspace and ^h working even after
+# returning from command mode
+#bindkey '^?' backward-delete-char
+#bindkey '^h' backward-delete-char
+
+# ctrl-w removed word backwards
+#bindkey '^w' backward-kill-word
+
+# ctrl-r starts searching history backward
+#bindkey '^r' history-incremental-search-backward
+
 # Startup Scripts 
 #source venv/bin/activate
 
 # Colorize the Terminal
 export CLICOLOR=1
 export TERM=xterm-color
-PATH="/usr/local/bin:$PATH"
-PATH="/usr/local/share/python:$PATH"
+#PATH="/usr/local/bin:$PATH"
+#PATH="/usr/local/share/python:$PATH"
 PATH="/Applications/Postgres.app/Contents/MacOS/bin:$PATH"
 PATH="/Users/nickma/.rbenv/versions/1.9.3-p392/bin/:$PATH"
 
@@ -29,6 +49,108 @@ function _update_ps1() {
     export PS1="$(~/powerline-shell.py $? 2> /dev/null)"
 }
 
+<<<<<<< Updated upstream
+||||||| merged common ancestors
+_dir_chomp () {
+    local IFS=/ c=1 n d
+    local p=(${1/#$HOME/\~}) r=${p[*]}
+    local s=${#r}
+    while ((s>$2&&c<${#p[*]}-1))
+    do
+        d=${p[c]}
+        n=1;[[ $d = .* ]]&&n=2
+        ((s-=${#d}-n))
+        p[c++]=${d:0:n}
+    done
+    echo "${p[*]}"
+}
+
+#$(date +%H:%M) 
+## COLOURS ##
+#GREY=\[\e[1;30m\]
+
+# change terminal style
+#PS1='\e[0;33m\w\n\e[0m'
+#PS1=$PS1'\e[0;33m[ \W$(__git_ps1 " (%s)") ]\e[0m\$ '
+# dark colors background terminal
+#PS1='\[\e[0;32m\]\w\[\e[0m\]\n\e[0;36m\][ \W$(__git_ps1 " (%s)") ]\[\e[0m\]\$ '
+#PS1='\[\e[0;32m\] $(_dir_chomp \w 20) \[\e[0m\]\e[0;36m\][ \W$(__git_ps1 " (%s)") ]\[\e[0m\]\$ '
+# bright colors background terminal
+#PS1='\[\e[1;32m\] $(_dir_chomp \w 20) \[\e[0m\]\e[0;31m\][ \W$(__git_ps1 " (%s)") ]\[\e[0m\]\$ '
+#30m and 36m is good
+
+#export PROMPT_COMMAND="_update_ps1; $PROMPT_COMMAND"
+
+#########################
+##      ALIASES        ##
+#########################
+
+alias loc='cd /usr/local/workspace'
+alias pipfiles='cd /usr/local/lib/python2.7/site-packages'
+alias subl='/Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl'
+alias g='git'
+alias apachestart='sudo apachectl -k start'
+alias apachestop='sudo apachectl -k stop'
+alias sshaws='ssh -o "UserKnownHostsFile /dev/null"'
+alias sha256='shasum -a 256'
+alias sha1='shasum -a 1'
+alias tmux='tmux -2'
+alias please='ssh !!'
+alias WS='/usr/local/workspace'
+
+=======
+_dir_chomp () {
+    local IFS=/ c=1 n d
+    local p=(${1/#$HOME/\~}) r=${p[*]}
+    local s=${#r}
+    while ((s>$2&&c<${#p[*]}-1))
+    do
+        d=${p[c]}
+        n=1;[[ $d = .* ]]&&n=2
+        ((s-=${#d}-n))
+        p[c++]=${d:0:n}
+    done
+    echo "${p[*]}"
+}
+
+#$(date +%H:%M) 
+## COLOURS ##
+#GREY=\[\e[1;30m\]
+
+# change terminal style
+#PS1='\e[0;33m\w\n\e[0m'
+#PS1=$PS1'\e[0;33m[ \W$(__git_ps1 " (%s)") ]\e[0m\$ '
+# dark colors background terminal
+#PS1='\[\e[0;32m\]\w\[\e[0m\]\n\e[0;36m\][ \W$(__git_ps1 " (%s)") ]\[\e[0m\]\$ '
+#PS1='\[\e[0;32m\] $(_dir_chomp \w 20) \[\e[0m\]\e[0;36m\][ \W$(__git_ps1 " (%s)") ]\[\e[0m\]\$ '
+# bright colors background terminal
+#PS1='\[\e[1;32m\] $(_dir_chomp \w 20) \[\e[0m\]\e[0;31m\][ \W$(__git_ps1 " (%s)") ]\[\e[0m\]\$ '
+#30m and 36m is good
+
+#export PROMPT_COMMAND="_update_ps1; $PROMPT_COMMAND"
+#########################
+##      EXPORTS        ##
+#########################
+export WS="$HOME/workspace"
+#########################
+##      ALIASES        ##
+#########################
+alias loc='cd $WS'
+alias pipfiles='cd /usr/local/lib/python2.7/site-packages'
+alias subl='/Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl'
+alias g='git'
+alias apachestart='sudo apachectl -k start'
+alias apachestop='sudo apachectl -k stop'
+alias sshaws='ssh -o "UserKnownHostsFile /dev/null"'
+alias sha256='shasum -a 256'
+alias sha1='shasum -a 1'
+alias tmux='tmux -2'
+alias please='ssh !!'
+alias tl='task list'
+alias ts='task sync'
+alias tc='task complete'
+
+>>>>>>> Stashed changes
 #########################
 ##      virtualenv     ##
 #########################
@@ -37,7 +159,24 @@ export PIP_DOWNLOAD_CACHE=$HOME/.pip_packages
 if [ -d "$HOME/.local/bin" ]; then
     PATH="$HOME/.local/bin:$PATH"
 fi
+<<<<<<< Updated upstream
 #export PROJECT_HOME=$HOME/
+||||||| merged common ancestors
+
+#########################
+##      virtualenv     ##
+#########################
+export WORKON_HOME=$HOME/.virtualenvs
+export PIP_DOWNLOAD_CACHE=$HOME/.pip_packages
+#export PROJECT_HOME=$HOME/
+=======
+
+#########################
+##      virtualenv     ##
+#########################
+export WORKON_HOME=$HOME/.virtualenvs
+export PIP_DOWNLOAD_CACHE=$HOME/.pip_packages
+>>>>>>> Stashed changes
 
 #########################
 ##      Path ENVs      ##
@@ -85,5 +224,6 @@ function tcp_keepalive {
 }
 
 function conda_up {
-    export PATH=~/anaconda3/bin:$PATH
+    export PATH=$HOME/anaconda3/bin:$PATH
 }
+

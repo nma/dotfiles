@@ -19,14 +19,14 @@
     uncommit = reset --soft HEAD~1
     recommit = commit -c ORIG_HEAD
 [user]
-	email = nick.ma@maluuba.com 
-	name = Nick Ma
+	name = nma
+	email = nickma38@gmail.com
+[push]
+	default = simple
 [color]
 	ui = true
 [merge]
     conflictstyle = diff3
-[push]
-	default = simple
 [filter "lfs"]
 	required = true
 	clean = git-lfs clean %f
