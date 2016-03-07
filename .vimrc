@@ -1,3 +1,6 @@
+scriptencoding utf-8
+set encoding=utf-8
+
 set nocompatible
 filetype off
 
@@ -76,7 +79,7 @@ set backupdir=$HOME/.vim/backups
 set directory=$HOME/.vim/swaps
 
 " Use the same symbols as TextMate for tabstops and EOLs
-set listchars=tab:▸\ ,eol:¬,trail:·,precedes:·,extends:>
+set listchars=tab:>>,eol:¬,trail:·,precedes:·,extends:>
 " set list
 nmap <leader>l :set list!<CR>
 
