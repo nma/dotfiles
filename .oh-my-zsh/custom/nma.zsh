@@ -49,8 +49,6 @@ function _update_ps1() {
     export PS1="$(~/powerline-shell.py $? 2> /dev/null)"
 }
 
-<<<<<<< Updated upstream
-||||||| merged common ancestors
 _dir_chomp () {
     local IFS=/ c=1 n d
     local p=(${1/#$HOME/\~}) r=${p[*]}
@@ -98,7 +96,6 @@ alias tmux='tmux -2'
 alias please='ssh !!'
 alias WS='/usr/local/workspace'
 
-=======
 _dir_chomp () {
     local IFS=/ c=1 n d
     local p=(${1/#$HOME/\~}) r=${p[*]}
@@ -150,7 +147,6 @@ alias tl='task list'
 alias ts='task sync'
 alias tc='task complete'
 
->>>>>>> Stashed changes
 #########################
 ##      virtualenv     ##
 #########################
@@ -159,24 +155,6 @@ export PIP_DOWNLOAD_CACHE=$HOME/.pip_packages
 if [ -d "$HOME/.local/bin" ]; then
     PATH="$HOME/.local/bin:$PATH"
 fi
-<<<<<<< Updated upstream
-#export PROJECT_HOME=$HOME/
-||||||| merged common ancestors
-
-#########################
-##      virtualenv     ##
-#########################
-export WORKON_HOME=$HOME/.virtualenvs
-export PIP_DOWNLOAD_CACHE=$HOME/.pip_packages
-#export PROJECT_HOME=$HOME/
-=======
-
-#########################
-##      virtualenv     ##
-#########################
-export WORKON_HOME=$HOME/.virtualenvs
-export PIP_DOWNLOAD_CACHE=$HOME/.pip_packages
->>>>>>> Stashed changes
 
 #########################
 ##      Path ENVs      ##
