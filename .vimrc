@@ -1,6 +1,3 @@
-scriptencoding utf-8
-set encoding=utf-8
-
 set nocompatible
 filetype off
 
@@ -8,6 +5,7 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
 Plugin 'VundleVim/Vundle.vim'
+
 Plugin 'kien/ctrlp.vim'
 Plugin 'Lokaltog/vim-easymotion'
 Plugin 'airblade/vim-gitgutter'
@@ -22,6 +20,10 @@ Plugin 'altercation/vim-colors-solarized'
 Plugin 'groenewege/vim-less'
 Plugin 'farseer90718/vim-taskwarrior'
 Plugin 'fatih/vim-go'
+
+" All of your Plugins must be added before the following line
+call vundle#end()            " required
+filetype plugin indent on    " required
 
 "
 " Brief help
