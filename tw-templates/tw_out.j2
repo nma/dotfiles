@@ -1,0 +1,6 @@
+{% for key, project in projects.iteritems() %}
+{{ key }}
+{% for data in project -%}
+{% include "tw_out_items.j2" %}
+{% endfor -%}
+{% endfor %}

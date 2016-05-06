@@ -1,0 +1,14 @@
+	{{ data.description }}
+		Status: {{ data.status }}
+{%- if 'totalactivetime' in data %}
+		Time tracked: {{ data.totalactivetime }}
+{%- endif -%}
+{% if 'priority' in data %}
+		Priority: {{ data.priority }}
+{%- endif -%}
+{% if 'due' in data %}
+		Due: {{ data.due }}
+{%- endif %}
+		Date Added: {{ data.entry }}
+		Date Completed: {{ data.end if 'end' in data  }}
+
