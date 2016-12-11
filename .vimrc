@@ -90,7 +90,7 @@ nnoremap <F2> :set invpaste paste?<CR>
 imap jj <ESC>
 set pastetoggle=<F2>
 set showmode
-set mouse=a
+" set mouse=a
 set nowrap
 " sets colorcolumn when lines go over 120 chars
 set cc=120
@@ -123,9 +123,9 @@ nmap <silent> <C-t> :NERDTreeToggle <CR>
 " -------------------------------------------------------------------
 " powerline 
 " -------------------------------------------------------------------
-python3 from powerline.vim import setup as powerline_setup
-python3 powerline_setup()
-python3 del powerline_setup
+python from powerline.vim import setup as powerline_setup
+python powerline_setup()
+python del powerline_setup
 " -------------------------------------------------------------------
 " TagBarSettings 
 " -------------------------------------------------------------------
