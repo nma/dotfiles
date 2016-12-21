@@ -76,6 +76,9 @@ let vimclojure#ParenRainbow=1
 " -------------------------------------------------------------------
 " Vanilla Vim Settings
 " -------------------------------------------------------------------
+set undofile
+set undolevels=1000         " How many undos
+set undoreload=10000        " number of lines to save for undo
 set undodir=$HOME/.vim/undos
 set backupdir=$HOME/.vim/backups
 set directory=$HOME/.vim/swaps
