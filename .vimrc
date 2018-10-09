@@ -18,8 +18,10 @@ Plugin 'majutsushi/tagbar'
 Plugin 'vim-scripts/VimClojure'
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'groenewege/vim-less'
-Plugin 'farseer90718/vim-taskwarrior'
+" Plugin 'farseer90718/vim-taskwarrior'
 Plugin 'fatih/vim-go'
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -120,15 +122,15 @@ nmap <silent> <C-t> :NERDTreeToggle <CR>
 " -------------------------------------------------------------------
 " vim-airline 
 " -------------------------------------------------------------------
-"let g:airline#extensions#tabline#enabled = 1
-"let g:airline_theme='ubaryd'
-"let g:airline_powerline_fonts=1
+let g:airline#extensions#tabline#enabled = 1
+let g:airline_theme='ubaryd'
+let g:airline_powerline_fonts=1
 " -------------------------------------------------------------------
 " powerline 
 " -------------------------------------------------------------------
-python from powerline.vim import setup as powerline_setup
-python powerline_setup()
-python del powerline_setup
+"python from powerline.vim import setup as powerline_setup
+"python powerline_setup()
+"python del powerline_setup
 " -------------------------------------------------------------------
 " TagBarSettings 
 " -------------------------------------------------------------------
